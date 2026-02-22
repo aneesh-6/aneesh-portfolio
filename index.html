@@ -1,157 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aneesh | Software Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body{background:#0b0f19;color:#e5e7eb;line-height:1.6}
-    header{position:sticky;top:0;background:#020617cc;backdrop-filter:blur(10px);padding:18px 40px;border-bottom:1px solid #1f2937}
-    nav{display:flex;justify-content:space-between;align-items:center}
-    nav h1{color:#60a5fa;font-weight:700}
-    nav a{color:#e5e7eb;margin-left:20px;text-decoration:none;font-weight:500}
-    nav a:hover{color:#60a5fa}
-    section{max-width:1100px;margin:auto;padding:80px 30px}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* HERO */
-    .hero{text-align:center;padding-top:100px}
-    .hero h2{font-size:3rem;color:#60a5fa;margin-bottom:10px}
-    .hero p{font-size:1.2rem;color:#cbd5e1}
-    .hero .tag{margin-top:15px;color:#94a3b8}
-    .btn{display:inline-block;margin-top:25px;padding:12px 26px;background:#60a5fa;color:#020617;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s}
-    .btn:hover{background:#3b82f6}
+<title>Aneesh | Software Developer Portfolio</title>
 
-    /* CARDS */
-    .card{background:#020617;border:1px solid #1f2937;padding:28px;border-radius:14px;margin-top:25px;box-shadow:0 0 25px rgba(96,165,250,0.08)}
-    h3{color:#60a5fa;margin-bottom:18px;font-size:1.6rem}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* GRID */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+<style>
 
-    /* SKILLS */
-    .skills span{display:inline-block;background:#111827;padding:8px 14px;margin:6px;border-radius:20px;border:1px solid #1f2937}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
 
-    /* PROJECTS */
-    .project{background:#0b1220;padding:20px;border-radius:12px;border:1px solid #1f2937;transition:.3s}
-    .project:hover{transform:translateY(-6px);border-color:#60a5fa}
-    .project h4{color:#93c5fd;margin-bottom:8px}
-    .project p{font-size:.95rem;color:#cbd5e1}
+/* ===== BODY ===== */
+body{
+background:linear-gradient(135deg,#020617,#0b0f19,#020617);
+color:#e5e7eb;
+line-height:1.6;
+overflow-x:hidden;
+}
 
-    footer{text-align:center;padding:25px;background:#020617;border-top:1px solid #1f2937}
-  </style>
+/* ===== NAVBAR ===== */
+header{
+position:sticky;
+top:0;
+background:#020617cc;
+backdrop-filter:blur(10px);
+padding:18px 40px;
+border-bottom:1px solid #1f2937;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav h1{
+color:#60a5fa;
+}
+
+nav a{
+color:#e5e7eb;
+margin-left:20px;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#60a5fa;
+}
+
+/* ===== SECTIONS ===== */
+section{
+max-width:1100px;
+margin:auto;
+padding:90px 30px;
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* ===== HERO ===== */
+.hero{
+text-align:center;
+}
+
+.profile-img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #60a5fa;
+box-shadow:0 0 40px rgba(96,165,250,.5);
+margin-bottom:20px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+.hero h2{
+font-size:3rem;
+color:#60a5fa;
+}
+
+.typing{
+margin-top:10px;
+font-size:1.3rem;
+color:#cbd5e1;
+border-right:3px solid #60a5fa;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(40,end) forwards,
+blink .7s infinite;
+}
+
+@keyframes typing{
+to{width:100%}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 28px;
+background:#60a5fa;
+color:#020617;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+background:#3b82f6;
+}
+
+/* ===== CARDS ===== */
+.card{
+background:#020617;
+border:1px solid #1f2937;
+padding:30px;
+border-radius:14px;
+margin-top:25px;
+transition:.4s;
+box-shadow:0 0 25px rgba(96,165,250,0.08);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 40px rgba(96,165,250,0.2);
+}
+
+h3{
+color:#60a5fa;
+margin-bottom:18px;
+font-size:1.7rem;
+}
+
+/* ===== GRID ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+/* ===== SKILLS ===== */
+.skills span{
+display:inline-block;
+background:#111827;
+padding:8px 14px;
+margin:6px;
+border-radius:20px;
+border:1px solid #1f2937;
+transition:.3s;
+}
+
+.skills span:hover{
+background:#60a5fa;
+color:#020617;
+transform:scale(1.1);
+}
+
+/* ===== PROJECTS ===== */
+.project{
+background:#0b1220;
+padding:20px;
+border-radius:12px;
+border:1px solid #1f2937;
+transition:.4s;
+}
+
+.project:hover{
+transform:translateY(-10px) scale(1.02);
+border-color:#60a5fa;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+border-top:1px solid #1f2937;
+margin-top:40px;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <h1>MY PORTFOLIO</h1>
-    <div>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+<h1>MY PORTFOLIO</h1>
+<div>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h2>Aneesh Goud 👨‍💻</h2>
-  <p>Computer Science (Data Science) Student | Future Software Engineer</p>
-  <div class="tag">Building skills in Java • Python • DBMS • Web Development</div>
-  <a class="btn" href="#projects">View My Work</a>
+
+<img src="profile.jpg" alt="Aneesh Goud" class="profile-img">
+
+<h2>Aneesh Goud 👨‍💻</h2>
+
+<div class="typing">
+CSE-DS Student • Future Software Engineer • Problem Solver
+</div>
+
+<a class="btn" href="#projects">View My Work</a>
+
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <div class="card">
-    <h3>About Me</h3>
-    <p>
-      I am a 2nd Year B.Tech student specializing in Computer Science and Engineering (Data Science)
-      at Malla Reddy Engineering College and Management Sciences (MREM), Medchal, Hyderabad.
-      I am passionate about software development, problem solving, and building real-world
-      applications while continuously improving my programming skills.
-    </p>
-    <img src="C:\Users\anees\Downloads\WhatsApp Image 2026-01-17 at 13.02.36 (1).jpeg" alt="Aneesh Goud"> <br>
-  </div>
+<div class="card">
+<h3>About Me</h3>
+<p>
+I am a 2nd Year B.Tech student specializing in Computer Science and Engineering (Data Science)
+at Malla Reddy Engineering College and Management Sciences (MREM), Hyderabad.
+I enjoy building software, solving problems, and continuously learning modern technologies
+to become a professional software developer.
+</p>
+</div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
-  <div class="card">
-    <h3>Education</h3>
-    <ul>
-      <li><strong>B.Tech – CSE (Data Science)</strong> | Malla Reddy Engineering College & Management Sciences (2024–Present)</li>
-      <li><strong>Intermediate (11th–12th)</strong> | Narayana Junior College, Narasimha Konda — 82.9% (2023)</li>
-      <li><strong>SSC (10th Class)</strong> | Avenues International School, Nellore — 52% (2021)</li>
-      <li><strong>JEE Long-Term Coaching</strong> | Aakash Coaching Center, Nellore (1 Year)</li>
-    </ul>
-  </div>
+<div class="card">
+<h3>Education</h3>
+<ul>
+<li><strong>B.Tech – CSE (Data Science)</strong> | MREM (2024–Present)</li>
+<li><strong>Intermediate</strong> | Narayana Junior College — 82.9%</li>
+<li><strong>SSC</strong> | Avenues International School — 52%</li>
+<li><strong>JEE Coaching</strong> | Aakash Institute</li>
+</ul>
+</div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-  <div class="card">
-    <h3>Technical Skills</h3>
-    <div class="skills">
-      <span>Java</span>
-      <span>Python</span>
-      <span>C Programming</span>
-      <span>DBMS</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript (Learning)</span>
-      <span>Web Development</span>
-      <span>Problem Solving</span>
-    </div>
-  </div>
+<div class="card">
+<h3>Technical Skills</h3>
+<div class="skills">
+<span>Java</span>
+<span>Python</span>
+<span>C</span>
+<span>DBMS</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Web Development</span>
+<span>Problem Solving</span>
+</div>
+</div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <div class="card">
-    <h3>Projects</h3>
-    <div class="grid">
+<div class="card">
+<h3>Projects</h3>
 
-      <div class="project">
-        <h4>Personal Portfolio Website</h4>
-        <p>
-          Designed and developed a responsive personal portfolio using HTML and CSS to showcase
-          skills, education, and projects.
-        </p>
-      </div>
+<div class="grid">
 
-      <div class="project">
-        <h4>Python Mini Projects Collection</h4>
-        <p>
-          Collection of beginner Python programs like calculator, AI Chatbot.
-        </p>
-      </div>
+<div class="project">
+<h4>Personal Portfolio Website</h4>
+<p>Responsive portfolio built using HTML & CSS with modern UI design.</p>
+</div>
 
-    </div>
-  </div>
+<div class="project">
+<h4>Python Mini Projects</h4>
+<p>Calculator, chatbot, and beginner automation programs using Python.</p>
+</div>
+
+</div>
+</div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-  <div class="card">
-    <h3>Contact</h3>
-    <p>Email: aneeshgoud3172006@gmail.com</p>
-    <p>Phone: 7036648459</p>
-    <p>Location: Medchal, Hyderabad, Telangana</p>
-    <a href="https://www.linkedin.com/in/aneesh-goud-612674326">LinkedIn</a>
-    <a href="https://github.com/aneesh-6">GitHub</a>
-  </div>
+<div class="card">
+<h3>Contact</h3>
+<p>Email: aneeshgoud3172006@gmail.com</p>
+<p>Phone: 7036648459</p>
+<p>Location: Medchal, Hyderabad</p>
+
+<br>
+
+<a class="btn" href="https://www.linkedin.com/in/aneesh-goud-612674326">LinkedIn</a>
+<a class="btn" href="https://github.com/aneesh-6">GitHub</a>
+
+</div>
 </section>
 
 <footer>
-  <p>© 2026 Aneesh Goud | Built with HTML & CSS</p>
+<p>© 2026 Aneesh Goud | Built with ❤️ using HTML & CSS</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
